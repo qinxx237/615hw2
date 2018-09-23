@@ -1,0 +1,33 @@
+---
+title: "615HW2 from Hao"
+author: "Hao Qin"
+date: "9/23/2018"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE)
+```
+
+Re-write the Lake Huron shiny application from last class using ggplot2.
+
+```{r}
+library(ggplot2)
+library(tidyverse)
+suppressMessages(library("tidyverse"))
+library(tidyverse)
+data("LakeHuron")
+head(LakeHuron)
+year=c(1875:1972)
+LakeHuron_point=c(LakeHuron[c(1:98)])
+LakeHuron_New=data.frame(year, LakeHuron_point)
+head(LakeHuron_New)
+ggplot(LakeHuron_New)+geom_point(aes(x=year, y=LakeHuron_point))+geom_line(aes(x=year, y=LakeHuron_point))
+```
+
+```{r}
+"from the plot, we can get that this looks 
+like the same as the previous one by using 
+the shinny, this one I use the ggplot to express that "
+```
+
